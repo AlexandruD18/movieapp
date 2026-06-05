@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="movieApp - Scopri i film e le serie TV">
+        <title>movieApp - Profilo</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="header" id="header">
+            <a href="index.html" class="header_logo">
+                <span class="header_logo-icon">▶</span>
+                movieApp
+            </a>
+
+            <div class="search" id="search">
+                <div class="search_bar">
+                    <span class="search_icon">⊙</span>
+                    <input type="text" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV">
+                    <button class="search_clear" id="search-clear" aria-label="Cancella ricerca">×</button>
+                </div>
+                <div class="search_results" id="search-results">
+                    <!-- generati da JS -->
+                </div>
+            </div>
+
+            <button class="nav_toggle" id="nav-toggle" aria-label="Apri menu">≡</button>"
+            <nav>
+                <ul class="nav_list" id="nav-list">
+                    <li><a href="index.html" class="nav_link nav_link-active"></a></li>
+                    <li><a href="movies.html" class="nav__link">Film</a></li>
+                    <li><a href="series.html" class="nav__link">Serie TV</a></li>
+                    <li><a href="profile.html" class="nav__link">Profilo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="profile">
+                <div class="profile_header">
+                    <div class="profile_avatar" id="profilo-avatar">A</div>
+                    <div class="profile_info">
+                        <h1 class="profile_name" id="profile-name">Alexandru Dimofte</h1>
+                        <p class="profile_email" id="profile-email">alexandru2112alex@icloud.com</p>
+                        <p class="profile_member" id="profile-member">Membro da: 18 agosto 2005</p>
+                    </div>
+                </div>
+
+                <!-- statistiche profilo -->
+                <div class="profile_stats">
+                    <div class="stat">
+                        <div class="stat_number" id="stat-watched">120</div>
+                        <div class="stat_label">Film Visti</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat_number" id="stat-series">120</div>
+                        <div class="stat_label">Serie TV Viste</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat_number" id="stat-favorites">120</div>
+                        <div class="stat_label">Preferiti</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat_number" id="stat-hours">360</div>
+                        <div class="stat_label">Ore di Visione</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content">
+            <p class="footer__copy">&copy; 2026 movieApp — Progetto Esame Frontend</p>
+            <p class="footer__tmdb">Dati forniti da <strong>TMDB</strong> (The Movie Database).</p>
+            </div>
+        </footer>
+
+        <!-- script js -->
+        <script src="js/api.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
