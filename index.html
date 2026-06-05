@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="movieApp - Scopri i film e le serie TV">
+        <title>movieApp - Home</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="header" id="header">
+            <a href="index.html" class="header_logo">
+                <span class="header_logo-icon">▶</span>
+                movieApp
+            </a>
+
+            <div class="search" id="search">
+                <div class="search_bar">
+                    <span class="search_icon">⊙</span>
+                    <input type="text" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV">
+                    <button class="search_clear" id="search-clear" aria-label="Cancella ricerca">×</button>
+                </div>
+                <div class="search_results" id="search-results">
+                    <!-- generati da JS -->
+                </div>
+            </div>
+
+            <button class="nav_toggle" id="nav-toggle" aria-label="Apri menu">≡</button>"
+            <nav>
+                <ul class="nav_list" id="nav-list">
+                    <li><a href="index.html" class="nav_link nav_link-active"></a></li>
+                    <li><a href="movies.html" class="nav__link">Film</a></li>
+                    <li><a href="series.html" class="nav__link">Serie TV</a></li>
+                    <li><a href="profile.html" class="nav__link">Profilo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- hero dinamica -->
+            <section class="hero" id="hero">
+                <div class="hero_backdrop" id="hero-backgrop"></div>
+                <div class="hero_gradient"></div>
+                <div class="hero_content">
+                    <h1 class="hero_title" id="hero-title">Caricamento…</h1>
+                    <p class="hero_subtitle" id="hero-overview">
+                        Scopri i titoli più popolari del momento, aggiornati in tempo reale.
+                    </p>
+                    <div class="hero_meta" id="hero-meta"></div>
+                </div>
+            </section>
+
+            <!-- film trending -->
+            <section class="section" id="trending-movies">
+                <div class="section_header">
+                    <h2 class="section_title">Film <span class="section_accent">Trending</span></h2>
+                    <div class="section_line"></div>
+                </div>
+                <div class="scroll-row" id="trending-movies-row">
+                    <button class="scroll-row_btn scroll-row_btn--left" aria-label="Scorri a sinistra">‹</button>
+                    <div class="scroll-row_track" id="trending-movies-track">
+                        <!-- generati da main.js -->
+                    </div>
+                    <button class="scroll-row_btn scroll-row_btn--right" aria-label="Scorri a destra">›</button>
+                </div>
+            </section>
+
+            <!-- serie trending -->
+            <section class="section" id="trending-series">
+                <div class="section_header">
+                    <h2 class="section_title">Serie TV <span class="section_accent">Trending</span></h2>
+                    <div class="section_line"></div>
+                </div>
+                <div class="scroll-row" id="trending-series-row">
+                    <button class="scroll-row_btn scroll-row_btn--left" aria-label="Scorri a sinistra">‹</button>
+                    <div class="scroll-row_track" id="trending-series-track">
+                        <!-- generati da main.js -->
+                    </div>
+                    <button class="scroll-row_btn scroll-row_btn--right" aria-label="Scorri a destra">›</button>
+                </div>
+            </section>
+
+            <!-- top rating -->
+            <section class="section" id="top-rated">
+                <div class="section_header">
+                    <h2 class="section_title">I Più <span class="section_accent">Votati</span></h2>
+                    <div class="section_line"></div>
+                </div>
+                <div class="grid" id="top-rated-grid">
+                    <!-- generati da main.js -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content">
+            <p class="footer__copy">&copy; 2026 movieApp — Progetto Esame Frontend</p>
+            <p class="footer__tmdb">Dati forniti da <strong>TMDB</strong> (The Movie Database).</p>
+            </div>
+        </footer>
+
+        <!-- popup dettagli -->
+        <div class="modal" id="detail-modal">
+            <div class="modal_overlay" id="modal-overlay"></div>
+            <div class="modal_content">
+            <button class="modal_close" id="modal-close" aria-label="Chiudi">×</button>
+            <div class="modal_inner">
+                <div class="modal_backdrop" id="modal-backdrop"></div>
+                <div class="modal_body">
+                <div class="modal_poster" id="modal-poster"></div>
+                <div class="modal_info">
+                    <h2 class="modal_title" id="modal-title"></h2>
+                    <div class="modal_meta" id="modal-meta"></div>
+                    <p class="modal_overview" id="modal-overview"></p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- script js -->
+        <script src="js/api.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
