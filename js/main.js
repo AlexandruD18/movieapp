@@ -66,8 +66,8 @@ const initScrollRow = (rowId) => {
 
 /* home page */
 const initHome = async () => {
-    const trendingMoviesGrid = document.getElementById('trending-movies-grid');
-    const trendingSeriesGrid = document.getElementById('trending-series-grid');
+    const trendingMoviesGrid = document.getElementById('trending-movies-track');
+    const trendingSeriesGrid = document.getElementById('trending-series-track');
     const topRatedGrid = document.getElementById('top-rated-grid');
 
     try {

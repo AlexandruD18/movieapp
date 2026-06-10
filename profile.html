@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="movieApp - Scopri i film e le serie TV">
+        <meta name="description" content="movieApp - Profilo utente">
         <title>movieApp - Profilo</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -20,18 +20,16 @@
                     <input type="text" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV">
                     <button class="search_clear" id="search-clear" aria-label="Cancella ricerca">×</button>
                 </div>
-                <div class="search_results" id="search-results">
-                    <!-- generati da JS -->
-                </div>
+                <div class="search_results" id="search-results"></div>
             </div>
 
-            <button class="nav_toggle" id="nav-toggle" aria-label="Apri menu">≡</button>"
+            <button class="nav_toggle" id="nav-toggle" aria-label="Apri menu">≡</button>
             <nav>
                 <ul class="nav_list" id="nav-list">
-                    <li><a href="index.html" class="nav_link nav_link-active"></a></li>
-                    <li><a href="movies.html" class="nav__link">Film</a></li>
-                    <li><a href="series.html" class="nav__link">Serie TV</a></li>
-                    <li><a href="profile.html" class="nav__link">Profilo</a></li>
+                    <li><a href="index.html" class="nav_link">Home</a></li>
+                    <li><a href="movies.html" class="nav_link">Film</a></li>
+                    <li><a href="series.html" class="nav_link">Serie TV</a></li>
+                    <li><a href="profile.html" class="nav_link nav_link-active">Profilo</a></li>
                 </ul>
             </nav>
         </header>
@@ -47,7 +45,6 @@
                     </div>
                 </div>
 
-                <!-- statistiche profilo -->
                 <div class="profile_stats">
                     <div class="stat">
                         <div class="stat_number" id="stat-watched">120</div>
@@ -71,12 +68,11 @@
 
         <footer class="footer">
             <div class="footer__content">
-            <p class="footer__copy">&copy; 2026 movieApp — Progetto Esame Frontend</p>
-            <p class="footer__tmdb">Dati forniti da <strong>TMDB</strong> (The Movie Database).</p>
+                <p class="footer__copy">&copy; 2026 movieApp — Progetto Esame Frontend</p>
+                <p class="footer__tmdb">Dati forniti da <strong>TMDB</strong> (The Movie Database).</p>
             </div>
         </footer>
 
-        <!-- script js -->
         <script src="js/api.js"></script>
         <script src="js/utils.js"></script>
         <script src="js/main.js"></script>
