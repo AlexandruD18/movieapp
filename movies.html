@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Film popolari e attualmente in sala, aggiornati in tempo reale da TMDB.">
+        <meta name="description" content="Catalogo di film: popolari, in sala, più votati e in arrivo, filtrabili per genere. Dati in tempo reale da TMDB.">
         <meta name="theme-color" content="#0a0a0f">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Film · movieApp">
-        <meta property="og:description" content="Film popolari e attualmente in sala, aggiornati in tempo reale da TMDB.">
+        <meta property="og:description" content="Catalogo di film: popolari, in sala, più votati e in arrivo, filtrabili per genere. Dati in tempo reale da TMDB.">
         <meta property="og:image" content="assets/screenshot-home.jpg">
         <title>Film · movieApp</title>
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -49,32 +49,33 @@
             </nav>
         </header>
 
-        <main class="main" id="main">
-            <div class="page-title">
-                <h1 class="page-title_text"><span aria-hidden="true">▶</span> <span class="accent">Film</span></h1>
-                <p class="page-title_sub">Scopri i capolavori del cinema mondiale. Dalle nuove uscite ai film più premiati e amati di sempre.</p>
+        <main class="main catalog" id="main">
+            <header class="catalog_header" id="catalog-header">
+                <p class="catalog_eyebrow">Catalogo film</p>
+                <h1 class="catalog_title">Film</h1>
+                <p class="catalog_sub">Dalle uscite in sala ai capolavori più votati: scegli un elenco, filtra per genere e trova il prossimo film da vedere.</p>
+            </header>
+
+            <!-- filtri: schede e generi generati da catalog.js -->
+            <div class="catalog_controls">
+                <div class="catalog_controls-inner">
+                    <div class="tabs" id="catalog-tabs" role="tablist" aria-label="Elenco"></div>
+                    <div class="genres" id="catalog-genres" role="group" aria-label="Filtra per genere"></div>
+                </div>
             </div>
 
-            <section class="section" id="popular-movies" aria-labelledby="popular-movies-title">
-                <div class="section_header">
-                    <h2 class="section_title" id="popular-movies-title">Film <span class="section_accent">Popolari</span></h2>
-                    <div class="section_line"></div>
-                </div>
-                <div class="card-grid" id="popular-movies-grid">
-                    <!-- generati da JS -->
-                </div>
-                <button type="button" class="btn btn-secondary load-more" id="popular-movies-more" hidden>Carica altri</button>
-            </section>
+            <section class="spotlight" id="spotlight" aria-labelledby="spotlight-title" hidden></section>
 
-            <section class="section" id="now-playing" aria-labelledby="now-playing-title">
+            <section class="section catalog_results" id="catalog-results" role="tabpanel">
                 <div class="section_header">
-                    <h2 class="section_title" id="now-playing-title">In <span class="section_accent">Sala</span></h2>
+                    <h2 class="section_title" id="catalog-heading">Popolari</h2>
                     <div class="section_line"></div>
+                    <p class="catalog_count" id="catalog-count" aria-live="polite"></p>
                 </div>
-                <div class="card-grid" id="now-playing-grid">
-                    <!-- generati da JS -->
+                <div class="card-grid" id="catalog-grid">
+                    <!-- generati da catalog.js -->
                 </div>
-                <button type="button" class="btn btn-secondary load-more" id="now-playing-more" hidden>Carica altri</button>
+                <button type="button" class="btn btn-secondary load-more" id="catalog-more" hidden>Carica altri</button>
             </section>
         </main>
 
