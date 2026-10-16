@@ -1,0 +1,56 @@
+name: Deploy su GitHub Pages
+
+# pubblica solo dopo che la CI è passata su master
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      # pubblica solo i file del sito, non test, script e configurazioni
+      - name: Prepara la cartella del sito
+        run: |
+          mkdir _site
+          cp -r index.html movies.html series.html profile.html css js assets _site/
+
+      # js/config.js non è nel repository: viene generato dalla secret TMDB_API_KEY
+      - name: Genera js/config.js
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          if [ -z "$TMDB_API_KEY" ]; then
+            echo "::error::Secret TMDB_API_KEY mancante (Settings → Secrets and variables → Actions)"
+            exit 1
+          fi
+          printf "export const TMDB_API_KEY = '%s';\n" "$TMDB_API_KEY" > _site/js/config.js
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v5

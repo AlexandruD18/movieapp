@@ -3,79 +3,88 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="movieApp - Scopri i film e le serie TV">
-        <title>movieApp - Serie TV</title>
+        <meta name="description" content="Serie TV popolari e in onda, aggiornate in tempo reale da TMDB.">
+        <meta name="theme-color" content="#0a0a0f">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Serie TV · movieApp">
+        <meta property="og:description" content="Serie TV popolari e in onda, aggiornate in tempo reale da TMDB.">
+        <meta property="og:image" content="assets/screenshot-home.jpg">
+        <title>Serie TV · movieApp</title>
+        <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://api.themoviedb.org">
+        <link rel="preconnect" href="https://image.tmdb.org">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Vai al contenuto</a>
+
         <header class="header" id="header">
-            <a href="index.html" class="header_logo">
-                <span class="header_logo-icon">▶</span>
-                movieApp
+            <a href="index.html" class="header_logo" aria-label="movieApp, torna alla home">
+                <span class="header_logo-icon" aria-hidden="true">▶</span>
+                <span class="header_logo-text">movieApp</span>
             </a>
 
-            <div class="search" id="search">
+            <div class="search" id="search" role="search">
                 <div class="search_bar">
-                    <span class="search_icon">⊙</span>
-                    <input type="text" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV">
-                    <button class="search_clear" id="search-clear" aria-label="Cancella ricerca">×</button>
+                    <svg class="search_icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV" aria-controls="search-results">
+                    <button type="button" class="search_clear" id="search-clear" aria-label="Cancella ricerca" hidden>×</button>
                 </div>
-                <div class="search_results" id="search-results">
-                    <!-- generati da JS -->
+                <div class="search_results" id="search-results" aria-live="polite" hidden>
+                    <!-- generati da layout.js -->
                 </div>
             </div>
 
-            <button class="nav_toggle" id="nav-toggle" aria-label="Apri menu">≡</button>"
-            <nav>
+            <button type="button" class="nav_toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-list">≡</button>
+            <nav aria-label="Navigazione principale">
                 <ul class="nav_list" id="nav-list">
                     <li><a href="index.html" class="nav_link">Home</a></li>
                     <li><a href="movies.html" class="nav_link">Film</a></li>
-                    <li><a href="series.html" class="nav_link nav_link-active">Serie TV</a></li>
-                    <li><a href="profile.html" class="nav_link">Profilo</a></li>
+                    <li><a href="series.html" class="nav_link" aria-current="page">Serie TV</a></li>
+                    <li><a href="profile.html" class="nav_link">La mia lista</a></li>
                 </ul>
             </nav>
         </header>
 
-        <main class="main">
+        <main class="main" id="main">
             <div class="page-title">
-                <h1 class="page-title_text">▤ <span class="accent">Serie TV</span></h1>
+                <h1 class="page-title_text"><span aria-hidden="true">▤</span> <span class="accent">Serie TV</span></h1>
                 <p class="page-title_sub">Il tuo prossimo binge-watch ti aspetta. Le serie più acclamate e i nuovi episodi più attesi.</p>
             </div>
 
-            <!-- serie popolari -->
-            <section class="section" id="popular-series">
+            <section class="section" id="popular-series" aria-labelledby="popular-series-title">
                 <div class="section_header">
-                    <h2 class="section_title">Serie <span class="section_accent">Popolari</span></h2>
+                    <h2 class="section_title" id="popular-series-title">Serie <span class="section_accent">Popolari</span></h2>
                     <div class="section_line"></div>
                 </div>
                 <div class="card-grid" id="popular-series-grid">
                     <!-- generati da JS -->
                 </div>
+                <button type="button" class="btn btn-secondary load-more" id="popular-series-more" hidden>Carica altri</button>
             </section>
 
-            <!-- serie in onda -->
-            <section class="section" id="on-the-air">
+            <section class="section" id="on-the-air" aria-labelledby="on-the-air-title">
                 <div class="section_header">
-                    <h2 class="section_title">In <span class="section_accent">Onda</span></h2>
+                    <h2 class="section_title" id="on-the-air-title">In <span class="section_accent">Onda</span></h2>
                     <div class="section_line"></div>
                 </div>
                 <div class="card-grid" id="on-the-air-grid">
                     <!-- generati da JS -->
                 </div>
+                <button type="button" class="btn btn-secondary load-more" id="on-the-air-more" hidden>Carica altri</button>
             </section>
-
         </main>
 
         <footer class="footer">
-            <div class="footer__content">
-            <p class="footer__copy">&copy; 2026 movieApp — Progetto Esame Frontend</p>
-            <p class="footer__tmdb">Dati forniti da <strong>TMDB</strong> (The Movie Database).</p>
+            <div class="footer_content">
+                <p class="footer_copy">&copy; 2026 movieApp · Sviluppato da <strong>Alexandru Dimofte</strong> · <a href="https://github.com/AlexandruD18/movieapp-dimofte" target="_blank" rel="noopener">Codice su GitHub</a></p>
+                <p class="footer_tmdb">Dati e immagini forniti da <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. Questo prodotto usa l'API di TMDB ma non è approvato né certificato da TMDB.</p>
             </div>
         </footer>
 
-        <!-- script js -->
-        <script src="js/api.js"></script>
-        <script src="js/utils.js"></script>
-        <script src="js/series.js"></script>
+        <script type="module" src="js/pages/series.js"></script>
     </body>
 </html>

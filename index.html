@@ -3,124 +3,115 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="movieApp - Scopri i film e le serie TV">
-        <title>movieApp - Home</title>
+        <meta name="description" content="Scopri i film e le serie TV di tendenza, i più votati e le novità, con dati in tempo reale da TMDB.">
+        <meta name="theme-color" content="#0a0a0f">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="movieApp · Film e serie TV in tendenza">
+        <meta property="og:description" content="Scopri i film e le serie TV di tendenza, i più votati e le novità, con dati in tempo reale da TMDB.">
+        <meta property="og:image" content="assets/screenshot-home.jpg">
+        <title>movieApp · Film e serie TV in tendenza</title>
+        <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://api.themoviedb.org">
+        <link rel="preconnect" href="https://image.tmdb.org">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Vai al contenuto</a>
+
         <header class="header" id="header">
-            <a href="index.html" class="header_logo">
-                <span class="header_logo-icon">▶</span>
-                movieApp
+            <a href="index.html" class="header_logo" aria-label="movieApp, torna alla home">
+                <span class="header_logo-icon" aria-hidden="true">▶</span>
+                <span class="header_logo-text">movieApp</span>
             </a>
 
-            <div class="search" id="search">
+            <div class="search" id="search" role="search">
                 <div class="search_bar">
-                    <span class="search_icon">⊙</span>
-                    <input type="text" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV">
-                    <button class="search_clear" id="search-clear" aria-label="Cancella ricerca">×</button>
+                    <svg class="search_icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV" aria-controls="search-results">
+                    <button type="button" class="search_clear" id="search-clear" aria-label="Cancella ricerca" hidden>×</button>
                 </div>
-                <div class="search_results" id="search-results">
-                    <!-- generati da JS -->
+                <div class="search_results" id="search-results" aria-live="polite" hidden>
+                    <!-- generati da layout.js -->
                 </div>
             </div>
 
-            <button class="nav_toggle" id="nav-toggle" aria-label="Apri menu">≡</button>
-            <nav>
+            <button type="button" class="nav_toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-list">≡</button>
+            <nav aria-label="Navigazione principale">
                 <ul class="nav_list" id="nav-list">
-                    <li><a href="index.html" class="nav_link nav_link-active">Home</a></li>
+                    <li><a href="index.html" class="nav_link" aria-current="page">Home</a></li>
                     <li><a href="movies.html" class="nav_link">Film</a></li>
                     <li><a href="series.html" class="nav_link">Serie TV</a></li>
-                    <li><a href="profile.html" class="nav_link">Profilo</a></li>
+                    <li><a href="profile.html" class="nav_link">La mia lista</a></li>
                 </ul>
             </nav>
         </header>
 
-        <main>
+        <main id="main">
             <!-- hero dinamica -->
-            <section class="hero" id="hero">
+            <section class="hero" id="hero" aria-labelledby="hero-title">
                 <div class="hero_backdrop" id="hero-backdrop"></div>
                 <div class="hero_gradient"></div>
                 <div class="hero_content">
+                    <div class="hero_meta" id="hero-meta"></div>
                     <h1 class="hero_title" id="hero-title">Caricamento…</h1>
                     <p class="hero_subtitle" id="hero-overview">
                         Scopri i titoli più popolari del momento, aggiornati in tempo reale.
                     </p>
-                    <div class="hero_meta" id="hero-meta"></div>
+                    <div class="hero_actions">
+                        <button type="button" class="btn btn-primary" id="hero-details" hidden>ⓘ Dettagli</button>
+                    </div>
                 </div>
             </section>
 
-            <!-- film trending -->
-            <section class="section" id="trending-movies">
+            <section class="section" id="trending-movies" aria-labelledby="trending-movies-title">
                 <div class="section_header">
-                    <h2 class="section_title">Film <span class="section_accent">Trending</span></h2>
+                    <h2 class="section_title" id="trending-movies-title">Film <span class="section_accent">Trending</span></h2>
                     <div class="section_line"></div>
                 </div>
                 <div class="scroll-row" id="trending-movies-row">
-                    <button class="scroll-row_btn scroll-row_btn-left" aria-label="Scorri a sinistra">‹</button>
+                    <button type="button" class="scroll-row_btn scroll-row_btn-left" aria-label="Scorri a sinistra">‹</button>
                     <div class="scroll-row_track" id="trending-movies-track">
-                        <!-- generati da main.js -->
+                        <!-- generati da home.js -->
                     </div>
-                    <button class="scroll-row_btn scroll-row_btn--right" aria-label="Scorri a destra">›</button>
+                    <button type="button" class="scroll-row_btn scroll-row_btn-right" aria-label="Scorri a destra">›</button>
                 </div>
             </section>
 
-            <!-- serie trending -->
-            <section class="section" id="trending-series">
+            <section class="section" id="trending-series" aria-labelledby="trending-series-title">
                 <div class="section_header">
-                    <h2 class="section_title">Serie TV <span class="section_accent">Trending</span></h2>
+                    <h2 class="section_title" id="trending-series-title">Serie TV <span class="section_accent">Trending</span></h2>
                     <div class="section_line"></div>
                 </div>
                 <div class="scroll-row" id="trending-series-row">
-                    <button class="scroll-row_btn scroll-row_btn-left" aria-label="Scorri a sinistra">‹</button>
+                    <button type="button" class="scroll-row_btn scroll-row_btn-left" aria-label="Scorri a sinistra">‹</button>
                     <div class="scroll-row_track" id="trending-series-track">
-                        <!-- generati da main.js -->
+                        <!-- generati da home.js -->
                     </div>
-                    <button class="scroll-row_btn scroll-row_btn-right" aria-label="Scorri a destra">›</button>
+                    <button type="button" class="scroll-row_btn scroll-row_btn-right" aria-label="Scorri a destra">›</button>
                 </div>
             </section>
 
-            <!-- top rating -->
-            <section class="section" id="top-rated">
+            <section class="section" id="top-rated" aria-labelledby="top-rated-title">
                 <div class="section_header">
-                    <h2 class="section_title">I Più <span class="section_accent">Votati</span></h2>
+                    <h2 class="section_title" id="top-rated-title">I Più <span class="section_accent">Votati</span></h2>
                     <div class="section_line"></div>
                 </div>
-                <div class="grid" id="top-rated-grid">
-                    <!-- generati da main.js -->
+                <div class="card-grid" id="top-rated-grid">
+                    <!-- generati da JS -->
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <div class="footer__content">
-            <p class="footer__copy">&copy; 2026 movieApp — Progetto Esame Frontend</p>
-            <p class="footer__tmdb">Dati forniti da <strong>TMDB</strong> (The Movie Database).</p>
+            <div class="footer_content">
+                <p class="footer_copy">&copy; 2026 movieApp · Sviluppato da <strong>Alexandru Dimofte</strong> · <a href="https://github.com/AlexandruD18/movieapp-dimofte" target="_blank" rel="noopener">Codice su GitHub</a></p>
+                <p class="footer_tmdb">Dati e immagini forniti da <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. Questo prodotto usa l'API di TMDB ma non è approvato né certificato da TMDB.</p>
             </div>
         </footer>
 
-        <!-- popup dettagli -->
-        <div class="modal" id="detail-modal">
-            <div class="modal_overlay" id="modal-overlay"></div>
-            <div class="modal_content">
-            <button class="modal_close" id="modal-close" aria-label="Chiudi">×</button>
-            <div class="modal_inner">
-                <div class="modal_backdrop" id="modal-backdrop"></div>
-                <div class="modal_body">
-                <div class="modal_poster" id="modal-poster"></div>
-                <div class="modal_info">
-                    <h2 class="modal_title" id="modal-title"></h2>
-                    <div class="modal_meta" id="modal-meta"></div>
-                    <p class="modal_overview" id="modal-overview"></p>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <!-- script js -->
-        <script src="js/api.js"></script>
-        <script src="js/utils.js"></script>
-        <script src="js/main.js"></script>
+        <script type="module" src="js/pages/home.js"></script>
     </body>
 </html>

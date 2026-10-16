@@ -1,0 +1,106 @@
+{
+  "page": 1,
+  "total_pages": 3,
+  "results": [
+    {
+      "id": 27205,
+      "title": "Inception",
+      "media_type": "movie",
+      "poster_path": "/5QHWgqaBxZI1eM5e3YhyKzY5o3z.jpg",
+      "backdrop_path": "/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+      "release_date": "2010-07-15",
+      "vote_average": 8.373,
+      "overview": "Dom Cobb possiede una qualifica speciale: è in grado di inserirsi nei sogni altrui per prelevare i segreti nascosti nel più profondo del subconscio. Viene contattato da Saito, un potentissimo industriale di origine giapponese, il quale gli chiede di tentare l'operazione opposta. Non deve prelevare pensieri celati ma inserire un'idea che si radichi nella mente di una persona. Costui è Robert Fischer Jr. il quale, alla morte dell'anziano e dittatoriale genitore, dovrà convincersi che l'unica cosa che può fare è distruggere l'impero ereditato. Saito avrà allora campo libero. In cambio offrirà a Cobb la possibilità di rientrare negli Stati Uniti dove è ricercato per omicidio. Cobb accetta e si fa affiancare da un team di cui entra a far parte la giovane Ariane, architetto abilissimo nella costruzione di spazi virtuali."
+    },
+    {
+      "id": 542438,
+      "title": "Bikini Inception",
+      "media_type": "movie",
+      "poster_path": "/mNASlEOFX2c9upxaSbgeKFvIr1L.jpg",
+      "backdrop_path": null,
+      "release_date": "2015-05-19",
+      "vote_average": 5,
+      "overview": ""
+    },
+    {
+      "id": 64956,
+      "title": "Inception: The Cobol Job",
+      "media_type": "movie",
+      "poster_path": "/sNxqwtyHMNQwKWoFYDqcYTui5Ok.jpg",
+      "backdrop_path": "/p8K8Z4yjaslJx5mTsIC5L6LJxQB.jpg",
+      "release_date": "2010-12-07",
+      "vote_average": 7.2,
+      "overview": ""
+    },
+    {
+      "id": 250845,
+      "title": "WWA The Inception",
+      "media_type": "movie",
+      "poster_path": null,
+      "backdrop_path": null,
+      "release_date": "2001-10-26",
+      "vote_average": 3.8,
+      "overview": ""
+    },
+    {
+      "id": 1644507,
+      "title": "The Kawayoku Inception",
+      "media_type": "movie",
+      "poster_path": "/sBFzjkDW8Lusa5wk7XFPo0vHJP3.jpg",
+      "backdrop_path": null,
+      "release_date": "2020-03-01",
+      "vote_average": 0,
+      "overview": ""
+    },
+    {
+      "id": 1747666,
+      "title": "Insha Allah: An inception at closure",
+      "media_type": "movie",
+      "poster_path": "/7Wn58hXRfUjMasXTOHcB8Ra7W0Z.jpg",
+      "backdrop_path": "/e3jSbxkjF04mLndsvg4NnAQN5hs.jpg",
+      "release_date": "",
+      "vote_average": 0,
+      "overview": ""
+    },
+    {
+      "id": 973484,
+      "title": "Inception: Music from the Motion Picture",
+      "media_type": "movie",
+      "poster_path": "/7uM4DyRVAcgagvhZoWrkrqMPbqV.jpg",
+      "backdrop_path": null,
+      "release_date": "2010-12-07",
+      "vote_average": 7,
+      "overview": ""
+    },
+    {
+      "id": 107600,
+      "name": "The Cruise",
+      "media_type": "tv",
+      "poster_path": "/dw6hlIEfxhJGzLMJtwh5EfhyWsA.jpg",
+      "backdrop_path": null,
+      "first_air_date": "2021-02-16",
+      "vote_average": 0,
+      "overview": ""
+    },
+    {
+      "id": 1359046,
+      "title": "Эхлэл",
+      "media_type": "movie",
+      "poster_path": null,
+      "backdrop_path": "/x7ZzkFECLu9JUiKGzj52TWlnwir.jpg",
+      "release_date": "1980-01-23",
+      "vote_average": 0,
+      "overview": ""
+    },
+    {
+      "id": 1524492,
+      "title": "伊始之尋",
+      "media_type": "movie",
+      "poster_path": "/bNIQyISwardLN2vtYtnasMRVPQk.jpg",
+      "backdrop_path": "/jEX1X905eJHUOlDp5ZDPOV2kdUI.jpg",
+      "release_date": "2025-05-17",
+      "vote_average": 0,
+      "overview": ""
+    }
+  ]
+}

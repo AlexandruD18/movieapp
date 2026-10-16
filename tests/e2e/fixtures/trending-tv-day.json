@@ -1,0 +1,106 @@
+{
+  "page": 1,
+  "total_pages": 3,
+  "results": [
+    {
+      "id": 213562,
+      "name": "Crystal Lake",
+      "media_type": "tv",
+      "poster_path": "/iFZd7n9ARPxLLg0BJ5jXGKk0lQG.jpg",
+      "backdrop_path": "/3qbNgNqMFrEEhIl43UKD9oxCkOw.jpg",
+      "first_air_date": "2026-10-15",
+      "vote_average": 6.833,
+      "overview": "Crystal Lake racconta la storia di Pamela Voorhees, una madre single che non riesce a superare il dolore per la tragica morte del figlio Jason, annegato nel lago della cittadina quasi un anno prima. Quando due sconosciuti  iniziano  a  indagare  sul suo passato, una serie di eventi inquietanti sconvolge Crystal Lake,  portando gli abitanti a interrogarsi sulla vera identità di Pamela."
+    },
+    {
+      "id": 203857,
+      "name": "The Diplomat",
+      "media_type": "tv",
+      "poster_path": "/cUy0ZYme43lop08nOtbQLWL0dX.jpg",
+      "backdrop_path": "/hzznrBI07C2chXivlLYvEmQESP7.jpg",
+      "first_air_date": "2023-04-20",
+      "vote_average": 7.6,
+      "overview": "Durante una crisi internazionale una diplomatica deve gestire il prestigioso incarico di ambasciatrice USA nel Regno Unito e un matrimonio teso con una star della politica."
+    },
+    {
+      "id": 213375,
+      "name": "VisionQuest",
+      "media_type": "tv",
+      "poster_path": "/tcNNmG5ZCsLW0lT0Lkbo0mK9Mf1.jpg",
+      "backdrop_path": "/uoXXbN2PrOxH6UKyP7kYwmGpAAP.jpg",
+      "first_air_date": "2026-10-13",
+      "vote_average": 9.1,
+      "overview": "La Visione, rigenerato e fuggito da chi voleva farne un’arma, si nasconde. Cerca il suo senso della vita con l’aiuto delle AI incorporate nel suo codice, tra cui Friday, Edith, Jarvis e il famigerato Ultron. La sua discreta esistenza finisce quando una taglia sulla sua testa lo spinge alla fuga accanto a Thomas Shepherd, un ragazzo misterioso che potrebbe essere la reincarnazione del figlio di Visione. Durante la sua fuga dalla cattura, per sopravvivere Visione dovrà affrontare la sua natura e resistere all’influenza di Ultron, nonché sciogliere l’enigma rappresentato dal suo giovane compagno."
+    },
+    {
+      "id": 286183,
+      "name": "Hollywood Arts",
+      "media_type": "tv",
+      "poster_path": "/uVL8tV8z9br3XGsA9DDEY743sRE.jpg",
+      "backdrop_path": "/2wjP481Z3G6NlXoUFutN5vcnqzC.jpg",
+      "first_air_date": "2026-10-15",
+      "vote_average": 7,
+      "overview": "Trina Vega, un'attrice in difficoltà, torna nella sua vecchia scuola superiore, la Hollywood Arts, in veste di supplente non qualificata; ben presto si ritrova a scontrarsi con una nuova generazione di studenti ambiziosi e di talento, ai quali però finisce inaspettatamente per essere di ispirazione, mentre questi imparano a trovare la propria strada nella scuola di arti dello spettacolo più esclusiva di Hollywood."
+    },
+    {
+      "id": 288673,
+      "name": "Carrie",
+      "media_type": "tv",
+      "poster_path": "/6otg7YqOkS8DxQO02yCGs6dwMsu.jpg",
+      "backdrop_path": "/9yCJtipMeDe8uAdSJKvw8BnYfRz.jpg",
+      "first_air_date": "2026-10-07",
+      "vote_average": 8.426,
+      "overview": "Dopo che la morte improvvisa e prematura del padre la catapulta nell'implacabile realtà di un liceo pubblico, Carrie è costretta ad affrontare un episodio di bullismo diventato virale che sconvolge la sua comunità, l'incessante pressione e la disinvolta crudeltà dell'era dei social media, oltre al risveglio di misteriosi poteri telecinetici che emergono con l'arrivo dell'adolescenza."
+    },
+    {
+      "id": 273247,
+      "name": "The Lowdown",
+      "media_type": "tv",
+      "poster_path": "/jgfHT7oLJtBDlRABiTTEp2AEret.jpg",
+      "backdrop_path": "/xz9YhlTE5gdr1mrQkY01vDvQF59.jpg",
+      "first_air_date": "2025-09-23",
+      "vote_average": 6.7,
+      "overview": "Segui le dure avventure del giornalista indipendente Lee Raybon, un autoproclamato “truthstorian” di Tulsa, la cui ossessione per la verità lo mette continuamente nei guai."
+    },
+    {
+      "id": 311648,
+      "name": "내가 떨릴 수 있게",
+      "media_type": "tv",
+      "poster_path": "/aGX71DFozG55achSbKd225LHGMj.jpg",
+      "backdrop_path": "/voAufY8Jv3AVfG15sxY5H6XWFKr.jpg",
+      "first_air_date": "2026-10-15",
+      "vote_average": 0,
+      "overview": ""
+    },
+    {
+      "id": 2190,
+      "name": "South Park",
+      "media_type": "tv",
+      "poster_path": "/2n7yTDBKvBf3B4NRcxnGTTSuPTJ.jpg",
+      "backdrop_path": "/3UviYOlhn8EgXMBuiT6MnUuo1w9.jpg",
+      "first_air_date": "1997-08-13",
+      "vote_average": 8.329,
+      "overview": "Stanley \"Stan\" Marsh, Eric Cartman e Kyle Broflosky e Kenneth \"Kenny\" McCormick, quattro ragazzi che frequentano la scuola elementare e vivono nella cittadina di South Park, in Colorado. Pestiferi, osceni e sfacciatamente intelligenti i ragazzacci affrontano temi di attualità con immediatezza e sana cattiveria sfatando tabù e demonizzando la società americana. Le loro \"armi\" sono la parodia, la commedia nera e il linguaggio scurrile."
+    },
+    {
+      "id": 288328,
+      "name": "把黑夜点燃",
+      "media_type": "tv",
+      "poster_path": "/aVfdtNadMfaxrwubm2cbL2nTDk3.jpg",
+      "backdrop_path": "/q48icceyDIuAZC9wL66ZEQF03oj.jpg",
+      "first_air_date": "2026-10-15",
+      "vote_average": 8.5,
+      "overview": ""
+    },
+    {
+      "id": 95350,
+      "name": "Lanterns",
+      "media_type": "tv",
+      "poster_path": "/sY2gOwvAy1rkYXJWfwNyy605tw0.jpg",
+      "backdrop_path": "/6gqezQJ2mkm4jreWwLyOZy2Vf6i.jpg",
+      "first_air_date": "2026-08-16",
+      "vote_average": 8.3,
+      "overview": "Due poliziotti intergalattici, la nuova recluta John Stewart e la leggenda delle Lanterne Hal Jordan, vengono coinvolti in un oscuro mistero che ha come sfondo la Terra mentre indagano su un omicidio nel cuore dell'America."
+    }
+  ]
+}

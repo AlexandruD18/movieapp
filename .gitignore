@@ -1,0 +1,13 @@
+# chiave API locale (vedi js/config.example.js)
+js/config.js
+
+# file di sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# dipendenze e report dei test
+node_modules/
+playwright-report/
+test-results/
+coverage/
