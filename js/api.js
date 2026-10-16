@@ -73,13 +73,14 @@ export const fetchTMDB = async (endpoint, params = {}) => {
  */
 export const getImageUrl = (path, size = 'w342') => (path ? `${IMG_BASE_URL}/${size}${path}` : null);
 
-/* liste paginate: risultati + info per il "Carica altri" */
-const getList = async (endpoint, params = {}) => {
+/* liste paginate: risultati + info per il "Carica altri" e il conteggio */
+export const getList = async (endpoint, params = {}) => {
     const data = await fetchTMDB(endpoint, params);
     return {
         results: data.results ?? [],
         page: data.page ?? 1,
         totalPages: data.total_pages ?? 1,
+        totalResults: data.total_results ?? 0,
     };
 };
 
@@ -88,13 +89,11 @@ export const getTrending = (type) => getList(`/trending/${type}/day`);
 
 export const getTopRatedMovies = (page = 1) => getList('/movie/top_rated', { page });
 
-export const getPopularMovies = (page = 1) => getList('/movie/popular', { page });
-
-export const getNowPlayingMovies = (page = 1) => getList('/movie/now_playing', { page });
-
-export const getPopularSeries = (page = 1) => getList('/tv/popular', { page });
-
-export const getOnTheAirSeries = (page = 1) => getList('/tv/on_the_air', { page });
+/* generi ufficiali di TMDB per film o serie, in italiano */
+export const getGenres = async (type) => {
+    const data = await fetchTMDB(`/genre/${type}/list`);
+    return data.genres ?? [];
+};
 
 /* dettaglio + cast + trailer + piattaforme + consigliati in una sola richiesta */
 export const getDetail = (type, id) => fetchTMDB(`/${type}/${id}`, {

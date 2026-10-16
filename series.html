@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Serie TV popolari e in onda, aggiornate in tempo reale da TMDB.">
+        <meta name="description" content="Catalogo di serie TV: popolari, in onda, più votate e in programmazione oggi, filtrabili per genere. Dati in tempo reale da TMDB.">
         <meta name="theme-color" content="#0a0a0f">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Serie TV · movieApp">
-        <meta property="og:description" content="Serie TV popolari e in onda, aggiornate in tempo reale da TMDB.">
+        <meta property="og:description" content="Catalogo di serie TV: popolari, in onda, più votate e in programmazione oggi, filtrabili per genere. Dati in tempo reale da TMDB.">
         <meta property="og:image" content="assets/screenshot-home.jpg">
         <title>Serie TV · movieApp</title>
         <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -49,32 +49,33 @@
             </nav>
         </header>
 
-        <main class="main" id="main">
-            <div class="page-title">
-                <h1 class="page-title_text"><span aria-hidden="true">▤</span> <span class="accent">Serie TV</span></h1>
-                <p class="page-title_sub">Il tuo prossimo binge-watch ti aspetta. Le serie più acclamate e i nuovi episodi più attesi.</p>
+        <main class="main catalog" id="main">
+            <header class="catalog_header" id="catalog-header">
+                <p class="catalog_eyebrow">Catalogo serie TV</p>
+                <h1 class="catalog_title">Serie TV</h1>
+                <p class="catalog_sub">Le serie del momento, quelle in onda questa settimana e le più amate di sempre, filtrabili per genere.</p>
+            </header>
+
+            <!-- filtri: schede e generi generati da catalog.js -->
+            <div class="catalog_controls">
+                <div class="catalog_controls-inner">
+                    <div class="tabs" id="catalog-tabs" role="tablist" aria-label="Elenco"></div>
+                    <div class="genres" id="catalog-genres" role="group" aria-label="Filtra per genere"></div>
+                </div>
             </div>
 
-            <section class="section" id="popular-series" aria-labelledby="popular-series-title">
-                <div class="section_header">
-                    <h2 class="section_title" id="popular-series-title">Serie <span class="section_accent">Popolari</span></h2>
-                    <div class="section_line"></div>
-                </div>
-                <div class="card-grid" id="popular-series-grid">
-                    <!-- generati da JS -->
-                </div>
-                <button type="button" class="btn btn-secondary load-more" id="popular-series-more" hidden>Carica altri</button>
-            </section>
+            <section class="spotlight" id="spotlight" aria-labelledby="spotlight-title" hidden></section>
 
-            <section class="section" id="on-the-air" aria-labelledby="on-the-air-title">
+            <section class="section catalog_results" id="catalog-results" role="tabpanel">
                 <div class="section_header">
-                    <h2 class="section_title" id="on-the-air-title">In <span class="section_accent">Onda</span></h2>
+                    <h2 class="section_title" id="catalog-heading">Popolari</h2>
                     <div class="section_line"></div>
+                    <p class="catalog_count" id="catalog-count" aria-live="polite"></p>
                 </div>
-                <div class="card-grid" id="on-the-air-grid">
-                    <!-- generati da JS -->
+                <div class="card-grid" id="catalog-grid">
+                    <!-- generati da catalog.js -->
                 </div>
-                <button type="button" class="btn btn-secondary load-more" id="on-the-air-more" hidden>Carica altri</button>
+                <button type="button" class="btn btn-secondary load-more" id="catalog-more" hidden>Carica altri</button>
             </section>
         </main>
 

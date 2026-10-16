@@ -35,6 +35,7 @@ const LIST_FIELDS = ['id', 'title', 'name', 'media_type', 'poster_path', 'backdr
 const trimList = (data) => ({
     page: 1,
     total_pages: 3, // abbastanza per provare "Carica altri"
+    total_results: data.total_results,
     results: data.results.slice(0, LIST_SIZE).map((item) => pick(item, LIST_FIELDS)),
 });
 
@@ -60,8 +61,15 @@ const fixtures = {
     'movie-top_rated': trimList(await get('/movie/top_rated')),
     'movie-popular': trimList(await get('/movie/popular')),
     'movie-now_playing': trimList(await get('/movie/now_playing')),
+    'movie-upcoming': trimList(await get('/movie/upcoming')),
     'tv-popular': trimList(await get('/tv/popular')),
     'tv-on_the_air': trimList(await get('/tv/on_the_air')),
+    'tv-top_rated': trimList(await get('/tv/top_rated')),
+    'tv-airing_today': trimList(await get('/tv/airing_today')),
+    'discover-movie': trimList(await get('/discover/movie', { with_genres: 16, sort_by: 'popularity.desc' })),
+    'discover-tv': trimList(await get('/discover/tv', { with_genres: 16, sort_by: 'popularity.desc' })),
+    'genre-movie-list': await get('/genre/movie/list'),
+    'genre-tv-list': await get('/genre/tv/list'),
     'search-multi': trimList(await get('/search/multi', { query: 'inception' })),
     'movie-detail': trimDetail(await get('/movie/27205', DETAIL_PARAMS)),
     'tv-detail': trimDetail(await get('/tv/1396', DETAIL_PARAMS)),

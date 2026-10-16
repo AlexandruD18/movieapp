@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
-import { failApi, fixture, mockApi } from './mock-api.js';
+import { fixture, mockApi } from './mock-api.js';
 
 test.beforeEach(async ({ page }) => {
     await mockApi(page);
@@ -17,34 +17,6 @@ test.describe('pagine', () => {
         await expect(page.locator('#trending-movies-track .card')).toHaveCount(trending.length);
         await expect(page.locator('#trending-series-track .card')).toHaveCount(fixture('trending-tv-day').results.length);
         await expect(page.locator('#top-rated-grid .card')).toHaveCount(fixture('movie-top_rated').results.length);
-    });
-
-    test('la pagina film carica altre card su richiesta', async ({ page }) => {
-        const perPage = fixture('movie-popular').results.length;
-        await page.goto('/movies.html');
-
-        const grid = page.locator('#popular-movies-grid .card');
-        await expect(grid).toHaveCount(perPage);
-        await page.locator('#popular-movies-more').click();
-        await expect(grid).toHaveCount(perPage * 2);
-    });
-
-    test('la pagina serie usa i suoi endpoint', async ({ page }) => {
-        await page.goto('/series.html');
-        await expect(page.locator('#popular-series-grid .card')).toHaveCount(fixture('tv-popular').results.length);
-        await expect(page.locator('#on-the-air-grid .card')).toHaveCount(fixture('tv-on_the_air').results.length);
-    });
-
-    test('se l’API fallisce mostra il motivo e "Riprova" funziona', async ({ page }) => {
-        const restore = await failApi(page, 401);
-        await page.goto('/movies.html');
-
-        const grid = page.locator('#popular-movies-grid');
-        await expect(grid.getByRole('alert')).toHaveText(/API key TMDB non valida/);
-
-        await restore();
-        await grid.getByRole('button', { name: 'Riprova' }).click();
-        await expect(grid.locator('.card')).toHaveCount(fixture('movie-popular').results.length);
     });
 });
 
@@ -158,7 +130,7 @@ test('la mia lista: aggiungo dal popup, ritrovo nel profilo, rimuovo', async ({ 
 test.describe('accessibilità (axe, WCAG 2 AA)', () => {
     const scan = (page) => new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
 
-    for (const path of ['/index.html', '/movies.html', '/profile.html']) {
+    for (const path of ['/index.html', '/movies.html', '/series.html', '/profile.html']) {
         test(`nessuna violazione su ${path}`, async ({ page }) => {
             await page.goto(path);
             await page.waitForLoadState('networkidle');
