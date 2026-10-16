@@ -30,8 +30,10 @@ describe('formattazione del dettaglio', () => {
         expect(getStatusLabel('Qualcosa di nuovo')).toBe('Qualcosa di nuovo');
     });
 
-    it('formatMoney in forma compatta, null se assente', () => {
-        expect(formatMoney(160000000)).toMatch(/160\s?Mln/);
+    it('formatMoney in forma compatta, senza decimali inutili, null se assente', () => {
+        expect(formatMoney(160000000)).toMatch(/^160\s?Mln/);
+        expect(formatMoney(839030630)).toMatch(/^839\s?Mln/);
+        expect(formatMoney(1250000)).toMatch(/^1,3\s?Mln/);
         expect(formatMoney(0)).toBeNull();
     });
 

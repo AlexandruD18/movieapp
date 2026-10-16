@@ -54,9 +54,16 @@ export const getLanguageName = (code) => {
 
 export const getStatusLabel = (status) => STATUS_LABELS[status] ?? status ?? null;
 
-export const formatMoney = (amount) => (amount > 0
-    ? new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 }).format(amount)
-    : null);
+// minimumFractionDigits esplicito: senza, alcune versioni di ICU scrivono "160,0 Mln" e altre "160 Mln"
+const moneyFormat = new Intl.NumberFormat('it-IT', {
+    style: 'currency',
+    currency: 'USD',
+    notation: 'compact',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 1,
+});
+
+export const formatMoney = (amount) => (amount > 0 ? moneyFormat.format(amount) : null);
 
 export const getScoreLevel = (vote) => {
     if (vote >= 7) return 'high';
