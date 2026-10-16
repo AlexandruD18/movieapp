@@ -60,16 +60,27 @@ describe('fetchTMDB', () => {
             .mockResolvedValueOnce(jsonResponse({}, 500))
             .mockResolvedValueOnce(jsonResponse({ results: [{ id: 7 }] }));
 
-        await expect(api.getPopularMovies()).rejects.toThrow('500');
-        await expect(api.getPopularMovies()).resolves.toMatchObject({ results: [{ id: 7 }] });
+        await expect(api.getTopRatedMovies()).rejects.toThrow('500');
+        await expect(api.getTopRatedMovies()).resolves.toMatchObject({ results: [{ id: 7 }] });
         expect(fetch).toHaveBeenCalledTimes(2);
     });
 });
 
 describe('endpoint', () => {
     it('normalizza le liste paginate', async () => {
-        fetch.mockResolvedValue(jsonResponse({ results: [{ id: 1 }], page: 3, total_pages: 9 }));
-        await expect(api.getOnTheAirSeries(3)).resolves.toEqual({ results: [{ id: 1 }], page: 3, totalPages: 9 });
+        fetch.mockResolvedValue(jsonResponse({ results: [{ id: 1 }], page: 3, total_pages: 9, total_results: 170 }));
+        await expect(api.getList('/tv/on_the_air', { page: 3 })).resolves.toEqual({
+            results: [{ id: 1 }],
+            page: 3,
+            totalPages: 9,
+            totalResults: 170,
+        });
+    });
+
+    it('getGenres restituisce l’elenco dei generi', async () => {
+        fetch.mockResolvedValue(jsonResponse({ genres: [{ id: 28, name: 'Azione' }] }));
+        await expect(api.getGenres('movie')).resolves.toEqual([{ id: 28, name: 'Azione' }]);
+        expect(new URL(fetch.mock.calls[0][0]).pathname).toBe('/3/genre/movie/list');
     });
 
     it('la ricerca tiene solo film e serie', async () => {

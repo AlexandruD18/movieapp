@@ -19,9 +19,11 @@ const respondWithFixture = (route) => {
         return route.fulfill({ json: { ...fixture(`${detail[1]}-detail`), id: Number(detail[2]) } });
     }
 
+    const data = fixture(path.replaceAll('/', '-'));
+    if (!data.results) return route.fulfill({ json: data }); // es. elenco dei generi
+
     // pagine successive: stessi titoli con id diversi, così "Carica altri" aggiunge davvero card
     const page = Number(url.searchParams.get('page') ?? 1);
-    const data = fixture(path.replaceAll('/', '-'));
     const results = data.results.map((item) => ({ ...item, id: item.id + (page - 1) * 1_000_000 }));
     return route.fulfill({ json: { ...data, page, results } });
 };

@@ -19,11 +19,11 @@ test('il menu si apre dal pulsante e porta alle pagine', async ({ page }) => {
 
 test('nessuno scroll orizzontale e griglia a due colonne', async ({ page }) => {
     await page.goto('/movies.html');
-    await expect(page.locator('#popular-movies-grid .card').first()).toBeVisible();
+    await expect(page.locator('#catalog-grid .card').first()).toBeVisible();
 
     const { overflow, columns } = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth > window.innerWidth,
-        columns: getComputedStyle(document.querySelector('#popular-movies-grid')).gridTemplateColumns.split(' ').length,
+        columns: getComputedStyle(document.querySelector('#catalog-grid')).gridTemplateColumns.split(' ').length,
     }));
     expect(overflow).toBe(false);
     expect(columns).toBe(2);
