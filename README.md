@@ -5,8 +5,6 @@
 Web app in stile Netflix per esplorare film e serie TV con dati in tempo reale da [TMDB](https://www.themoviedb.org/).
 È scritta in **HTML, CSS e JavaScript vanilla** (ES modules), senza framework né build step, ed è coperta da test unitari, end-to-end e di accessibilità.
 
-**[▶ Demo live](https://alexandrud18.github.io/movieapp-dimofte/)**
-
 ![Home di movieApp](assets/screenshot-home.jpg)
 
 | Catalogo film | Catalogo serie filtrato per genere |
