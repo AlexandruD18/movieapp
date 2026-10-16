@@ -1,24 +1,21 @@
-const initMovies = async () => {
-    const popularGrid = document.getElementById('popular-movies-grid');
-    const nowPlayingGrid = document.getElementById('now-playing-grid');
+import { getNowPlayingMovies, getPopularMovies } from '../api.js';
+import { initLayout } from '../layout.js';
+import { initPagedGrid } from '../utils.js';
 
-    /* film popolari */
-    showLoading(popularGrid);
-    try {
-        const popularMovies = await getPopularMovies();
-        renderCards(popularGrid, popularMovies, 'movie');
-    } catch (error) {
-        showError(popularGrid, 'Impossibile caricare i film popolari.');
-    }
+initLayout();
 
-    /* film in sala */
-    showLoading(nowPlayingGrid);
-    try {
-        const nowPlaying = await getNowPlayingMovies();
-        renderCards(nowPlayingGrid, nowPlaying, 'movie');
-    } catch (error) {
-        showError(nowPlayingGrid, 'Impossibile caricare i film in sala.');
-    }
-};
+/* film popolari */
+initPagedGrid({
+    container: document.getElementById('popular-movies-grid'),
+    button: document.getElementById('popular-movies-more'),
+    fetchPage: getPopularMovies,
+    type: 'movie',
+});
 
-document.addEventListener('DOMContentLoaded', initMovies);
+/* film in sala */
+initPagedGrid({
+    container: document.getElementById('now-playing-grid'),
+    button: document.getElementById('now-playing-more'),
+    fetchPage: getNowPlayingMovies,
+    type: 'movie',
+});

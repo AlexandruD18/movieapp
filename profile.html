@@ -3,78 +3,116 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="movieApp - Profilo utente">
-        <title>movieApp - Profilo</title>
+        <meta name="description" content="I film e le serie TV salvati nella tua lista personale.">
+        <meta name="theme-color" content="#0a0a0f">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="La mia lista · movieApp">
+        <meta property="og:description" content="I film e le serie TV salvati nella tua lista personale.">
+        <meta property="og:image" content="assets/screenshot-home.jpg">
+        <title>La mia lista · movieApp</title>
+        <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+        <link rel="preconnect" href="https://api.themoviedb.org">
+        <link rel="preconnect" href="https://image.tmdb.org">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">Vai al contenuto</a>
+
         <header class="header" id="header">
-            <a href="index.html" class="header_logo">
-                <span class="header_logo-icon">▶</span>
-                movieApp
+            <a href="index.html" class="header_logo" aria-label="movieApp, torna alla home">
+                <span class="header_logo-icon" aria-hidden="true">▶</span>
+                <span class="header_logo-text">movieApp</span>
             </a>
 
-            <div class="search" id="search">
+            <div class="search" id="search" role="search">
                 <div class="search_bar">
-                    <span class="search_icon">⊙</span>
-                    <input type="text" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV">
-                    <button class="search_clear" id="search-clear" aria-label="Cancella ricerca">×</button>
+                    <svg class="search_icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <input type="search" id="search-input" class="search_input" placeholder="Cerca film o serie TV…" autocomplete="off" aria-label="Cerca film o serie TV" aria-controls="search-results">
+                    <button type="button" class="search_clear" id="search-clear" aria-label="Cancella ricerca" hidden>×</button>
                 </div>
-                <div class="search_results" id="search-results"></div>
+                <div class="search_results" id="search-results" aria-live="polite" hidden>
+                    <!-- generati da layout.js -->
+                </div>
             </div>
 
-            <button class="nav_toggle" id="nav-toggle" aria-label="Apri menu">≡</button>
-            <nav>
+            <button type="button" class="nav_toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-list">≡</button>
+            <nav aria-label="Navigazione principale">
                 <ul class="nav_list" id="nav-list">
                     <li><a href="index.html" class="nav_link">Home</a></li>
                     <li><a href="movies.html" class="nav_link">Film</a></li>
                     <li><a href="series.html" class="nav_link">Serie TV</a></li>
-                    <li><a href="profile.html" class="nav_link nav_link-active">Profilo</a></li>
+                    <li><a href="profile.html" class="nav_link" aria-current="page">La mia lista</a></li>
                 </ul>
             </nav>
         </header>
 
-        <main class="main">
-            <section class="profile">
+        <main class="main" id="main">
+            <section class="profile" aria-labelledby="profile-title">
                 <div class="profile_header">
-                    <div class="profile_avatar" id="profilo-avatar">A</div>
+                    <div class="profile_avatar" aria-hidden="true">♥</div>
                     <div class="profile_info">
-                        <h1 class="profile_name" id="profile-name">Alexandru Dimofte</h1>
-                        <p class="profile_email" id="profile-email">alexandru2112alex@icloud.com</p>
-                        <p class="profile_member" id="profile-member">Membro da: 18 agosto 2005</p>
+                        <h1 class="profile_name" id="profile-title">La mia lista</h1>
+                        <p class="profile_subtitle">I film e le serie che hai salvato. La lista resta nel tuo browser: niente account, niente server.</p>
                     </div>
                 </div>
 
                 <div class="profile_stats">
                     <div class="stat">
-                        <div class="stat_number" id="stat-watched">120</div>
-                        <div class="stat_label">Film Visti</div>
+                        <div class="stat_number" id="stat-movies">0</div>
+                        <div class="stat_label">Film salvati</div>
                     </div>
                     <div class="stat">
-                        <div class="stat_number" id="stat-series">120</div>
-                        <div class="stat_label">Serie TV Viste</div>
+                        <div class="stat_number" id="stat-series">0</div>
+                        <div class="stat_label">Serie salvate</div>
                     </div>
                     <div class="stat">
-                        <div class="stat_number" id="stat-favorites">120</div>
-                        <div class="stat_label">Preferiti</div>
+                        <div class="stat_number" id="stat-average">–</div>
+                        <div class="stat_label">Voto medio</div>
                     </div>
                     <div class="stat">
-                        <div class="stat_number" id="stat-hours">360</div>
-                        <div class="stat_label">Ore di Visione</div>
+                        <div class="stat_number" id="stat-hours">0</div>
+                        <div class="stat_label">Ore di visione</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="favorites-title">
+                <div class="section_header">
+                    <h2 class="section_title" id="favorites-title">I tuoi <span class="section_accent">Preferiti</span></h2>
+                    <div class="section_line"></div>
+                    <div class="filters" role="group" aria-label="Filtra la lista">
+                        <button type="button" class="chip chip-button" data-filter="all" aria-pressed="true">Tutti</button>
+                        <button type="button" class="chip chip-button" data-filter="movie" aria-pressed="false">Film</button>
+                        <button type="button" class="chip chip-button" data-filter="tv" aria-pressed="false">Serie TV</button>
+                    </div>
+                </div>
+
+                <div class="card-grid" id="favorites-grid">
+                    <!-- generati da profile.js -->
+                </div>
+
+                <div class="empty-state" id="favorites-empty" hidden>
+                    <p class="empty-state_icon" aria-hidden="true">♡</p>
+                    <h3 class="empty-state_title">La tua lista è vuota</h3>
+                    <p class="empty-state_text">Apri un film o una serie e premi “Aggiungi alla lista” per ritrovarlo qui.</p>
+                    <div class="empty-state_actions">
+                        <a class="btn btn-primary" href="movies.html">Esplora i film</a>
+                        <a class="btn btn-secondary" href="series.html">Esplora le serie</a>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <div class="footer__content">
-                <p class="footer__copy">&copy; 2026 movieApp — Progetto Esame Frontend</p>
-                <p class="footer__tmdb">Dati forniti da <strong>TMDB</strong> (The Movie Database).</p>
+            <div class="footer_content">
+                <p class="footer_copy">&copy; 2026 movieApp · Sviluppato da <strong>Alexandru Dimofte</strong> · <a href="https://github.com/AlexandruD18/movieapp-dimofte" target="_blank" rel="noopener">Codice su GitHub</a></p>
+                <p class="footer_tmdb">Dati e immagini forniti da <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. Questo prodotto usa l'API di TMDB ma non è approvato né certificato da TMDB.</p>
             </div>
         </footer>
 
-        <script src="js/api.js"></script>
-        <script src="js/utils.js"></script>
-        <script src="js/main.js"></script>
+        <script type="module" src="js/pages/profile.js"></script>
     </body>
 </html>

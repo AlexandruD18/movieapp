@@ -1,24 +1,21 @@
-const initSeries = async () => {
-    const popularGrid = document.getElementById('popular-series-grid');
-    const onTheAirGrid = document.getElementById('on-the-air-grid');
+import { getOnTheAirSeries, getPopularSeries } from '../api.js';
+import { initLayout } from '../layout.js';
+import { initPagedGrid } from '../utils.js';
 
-    /* serie popolari */
-    showLoading(popularGrid);
-    try {
-        const popularSeries = await getPopularSeries();
-        renderCards(popularGrid, popularSeries, 'tv');
-    } catch (error) {
-        showError(popularGrid, 'Impossibile caricare le serie popolari.');
-    }
+initLayout();
 
-    /* serie in onda */
-    showLoading(onTheAirGrid);
-    try {
-        const onTheAir = await getOnTheAirSeries();
-        renderCards(onTheAirGrid, onTheAir, 'tv');
-    } catch (error) {
-        showError(onTheAirGrid, 'Impossibile caricare le serie in onda.');
-    }
-};
+/* serie popolari */
+initPagedGrid({
+    container: document.getElementById('popular-series-grid'),
+    button: document.getElementById('popular-series-more'),
+    fetchPage: getPopularSeries,
+    type: 'tv',
+});
 
-document.addEventListener('DOMContentLoaded', initSeries);
+/* serie in onda */
+initPagedGrid({
+    container: document.getElementById('on-the-air-grid'),
+    button: document.getElementById('on-the-air-more'),
+    fetchPage: getOnTheAirSeries,
+    type: 'tv',
+});

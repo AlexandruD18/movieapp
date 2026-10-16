@@ -1,105 +1,108 @@
-/* configurazione keys api */
-const API_KEY = '59419b0dbb685c06b675d07744aca952';
+import { loadApiKey } from './config-loader.js';
+
+/* configurazione api TMDB */
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_BASE_URL = 'https://image.tmdb.org/t/p';
 const LANGUAGE = 'it-IT';
+const PLACEHOLDER_KEY = 'LA_TUA_API_KEY';
 
-/* creazione url */
+const STATUS_MESSAGES = {
+    401: 'API key TMDB non valida.',
+    404: 'Contenuto non trovato.',
+    429: 'Troppe richieste: riprova tra qualche secondo.',
+};
 
-/**
- * @param {string|null} posterPath
- * @param {string} size
- * @returns {string}
-*/
-const getImageUrl = (posterPath, size = 'w300') => {
-    if (!posterPath) return null;
-    return `${IMG_BASE_URL}/${size}${posterPath}`;
+/* errore con un messaggio già pronto da mostrare all'utente */
+export class ApiError extends Error {
+    constructor(message, status = 0) {
+        super(message);
+        this.name = 'ApiError';
+        this.status = status;
+    }
 }
 
-/**
- * @param {string|null} backdropPath
- * @returns {string}
-*/
-const getBackdropUrl = (backdropPath) => {
-    if (!backdropPath) return null;
-    return `${IMG_BASE_URL}/w780${backdropPath}`;
-}
+/* se config.js manca l'app mostra un errore chiaro invece di rompersi */
+let apiKeyPromise = null;
+const getApiKey = () => {
+    apiKeyPromise ??= loadApiKey();
+    return apiKeyPromise;
+};
+
+/* cache delle richieste: la stessa URL viene scaricata una sola volta per pagina */
+const cache = new Map();
 
 /**
  * @param {string} endpoint
  * @param {object} params
  * @returns {Promise<object>}
-*/
-const fetchTMDB = async (endpoint, params = {}) => {
-    const queryParams = new URLSearchParams({api_key: API_KEY, language: LANGUAGE, ...params});
-    const url = `${BASE_URL}${endpoint}?${queryParams.toString()}`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching data from TMDB:', error);
-        throw error;
+ */
+export const fetchTMDB = async (endpoint, params = {}) => {
+    const apiKey = await getApiKey();
+    if (!apiKey || apiKey === PLACEHOLDER_KEY) {
+        throw new ApiError('API key mancante: copia js/config.example.js in js/config.js e inserisci la tua chiave TMDB.');
     }
-}
+
+    const query = new URLSearchParams({ api_key: apiKey, language: LANGUAGE, ...params });
+    const url = `${BASE_URL}${endpoint}?${query}`;
+
+    if (!cache.has(url)) {
+        const request = fetch(url)
+            .catch(() => {
+                throw new ApiError('Connessione assente: controlla la rete e riprova.');
+            })
+            .then((response) => {
+                if (!response.ok) {
+                    const message = STATUS_MESSAGES[response.status] ?? `Errore del server TMDB (${response.status}).`;
+                    throw new ApiError(message, response.status);
+                }
+                return response.json();
+            });
+
+        // gli errori non restano in cache, così "Riprova" rifà davvero la richiesta
+        request.catch(() => cache.delete(url));
+        cache.set(url, request);
+    }
+
+    return cache.get(url);
+};
+
+/**
+ * @param {string|null} path
+ * @param {string} size
+ * @returns {string|null}
+ */
+export const getImageUrl = (path, size = 'w342') => (path ? `${IMG_BASE_URL}/${size}${path}` : null);
+
+/* liste paginate: risultati + info per il "Carica altri" */
+const getList = async (endpoint, params = {}) => {
+    const data = await fetchTMDB(endpoint, params);
+    return {
+        results: data.results ?? [],
+        page: data.page ?? 1,
+        totalPages: data.total_pages ?? 1,
+    };
+};
 
 /* funzioni per endpoint */
-const getTrendingMovies = async () => {
-    const data = await fetchTMDB('/trending/movie/day');
-    return data.results;
-}
+export const getTrending = (type) => getList(`/trending/${type}/day`);
 
-const getTrendingSeries = async () => {
-    const data = await fetchTMDB('/trending/tv/day');
-    return data.results;
-}
+export const getTopRatedMovies = (page = 1) => getList('/movie/top_rated', { page });
 
-const getPopularMovies = async (page = 1) => {
-    const data = await fetchTMDB('/movie/popular', { page });
-    return data.results;
-}
+export const getPopularMovies = (page = 1) => getList('/movie/popular', { page });
 
-const getNowPlayingMovies = async (page = 1) => {
-    const data = await fetchTMDB('/movie/now_playing', { page });
-    return data.results;
-}
+export const getNowPlayingMovies = (page = 1) => getList('/movie/now_playing', { page });
 
-const getPopularSeries = async (page = 1) => {
-    const data = await fetchTMDB('/tv/popular', { page });
-    return data.results;
-}
+export const getPopularSeries = (page = 1) => getList('/tv/popular', { page });
 
-const getOnTheAirSeries = async (page = 1) => {
-    const data = await fetchTMDB('/tv/on_the_air', { page });
-    return data.results;
-}
+export const getOnTheAirSeries = (page = 1) => getList('/tv/on_the_air', { page });
 
-const getMovieDetail = async (movieId) => {
-    const data = await fetchTMDB(`/movie/${movieId}`);
-    return data;
-}
+/* dettaglio + cast + trailer + piattaforme + consigliati in una sola richiesta */
+export const getDetail = (type, id) => fetchTMDB(`/${type}/${id}`, {
+    append_to_response: 'credits,videos,watch/providers,recommendations',
+    include_video_language: 'it,en',
+});
 
-const searchMulti = async (query, page = 1) => {
-    const data = await fetchTMDB('/search/multi', { query, page });
-    return data.results.filter((item) => item.media_type === 'movie' || item.media_type === 'tv');
-}
-
-const searchMovies = async (query, page = 1) => {
-    const data = await fetchTMDB('/search/movie', { query, page });
-    return data.results;
-}
-
-const searchSeries = async (query, page = 1) => {
-    const data = await fetchTMDB('/search/tv', { query, page });
-    return data.results;
-}
-
-const getTopRatedMovies = async (page = 1) => {
-    const data = await fetchTMDB('/movie/top_rated', { page });
-    return data.results;
-}
+export const searchMulti = async (query) => {
+    const { results } = await getList('/search/multi', { query, include_adult: 'false' });
+    return results.filter((item) => item.media_type === 'movie' || item.media_type === 'tv');
+};
