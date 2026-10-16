@@ -1,0 +1,96 @@
+{
+  "page": 1,
+  "total_pages": 3,
+  "results": [
+    {
+      "id": 22980,
+      "name": "Watch What Happens Live with Andy Cohen",
+      "poster_path": "/onSD9UXfJwrMXWhq7UY7hGF2S1h.jpg",
+      "backdrop_path": "/hINekSpbcBxjnjGqmIm6I4bz2ab.jpg",
+      "first_air_date": "2009-07-16",
+      "vote_average": 4.9,
+      "overview": ""
+    },
+    {
+      "id": 59941,
+      "name": "The Tonight Show Starring Jimmy Fallon",
+      "poster_path": "/1N4o5PmmqhlVDrcdJ2RlCFWbLGX.jpg",
+      "backdrop_path": "/i4OYRb5V13BrOnTPJGdyXWg4r0J.jpg",
+      "first_air_date": "2014-02-17",
+      "vote_average": 5.8,
+      "overview": ""
+    },
+    {
+      "id": 61818,
+      "name": "Late Night with Seth Meyers",
+      "poster_path": "/u0ttHM5ZQCvnfL0lkueEgS4h2nI.jpg",
+      "backdrop_path": "/dfX2UaHVE5c7kLBFbgmEZJuy4Ev.jpg",
+      "first_air_date": "2014-02-25",
+      "vote_average": 5.1,
+      "overview": ""
+    },
+    {
+      "id": 2734,
+      "name": "Law & Order - Unità vittime speciali",
+      "poster_path": "/ygRqQATWXSQLUN7CatZV4be0C2N.jpg",
+      "backdrop_path": "/xhK9YCxNwnE0OB1SWvCY39heHQI.jpg",
+      "first_air_date": "1999-09-20",
+      "vote_average": 7.959,
+      "overview": "Le indagini dell'Unità Vittime Speciali, una nuova squadra speciale della Polizia di New York che si occupa di crimini a sfondo sessuale. In ogni episodio si segue da una parte l'attività investigativa attuata dalla squadra e dall'altra l'aspetto giudiziario con l'iniziativa processuale condotta dalla procura distrettuale."
+    },
+    {
+      "id": 91759,
+      "name": "愛·回家之開心速遞",
+      "poster_path": "/lgD4j9gUGmMckZpWWRJjorWqGVT.jpg",
+      "backdrop_path": "/dyFTt1a9ZpFdKE96kPlE9fQvXOJ.jpg",
+      "first_air_date": "2017-02-20",
+      "vote_average": 5.4,
+      "overview": ""
+    },
+    {
+      "id": 456,
+      "name": "I Simpson",
+      "poster_path": "/fxLooktejTUqCvZl9ARhKMFNpbf.jpg",
+      "backdrop_path": "/qcSHGC5BfoqBoP99PzDIERYG5Qm.jpg",
+      "first_air_date": "1989-12-17",
+      "vote_average": 8.023,
+      "overview": "I Simpson (The Simpsons) è una popolare sitcom animata creata dal fumettista statunitense Matt Groening alla fine degli anni ottanta per la Fox Broadcasting Company. È una parodia satirica della società e dello stile di vita statunitensi, personificati dalla famiglia protagonista, di cui fanno parte Homer, Marge e i loro tre figli Bart, Lisa e Maggie.\n\nAmbientato in una cittadina statunitense chiamata Springfield, lo show tratta in chiave umoristica molti aspetti della condizione umana, così come la cultura, la società in generale e la stessa televisione."
+    },
+    {
+      "id": 2261,
+      "name": "The Tonight Show Starring Johnny Carson",
+      "poster_path": "/uSvET5YUvHNDIeoCpErrbSmasFb.jpg",
+      "backdrop_path": "/qFfWFwfaEHzDLWLuttWiYq7Poy2.jpg",
+      "first_air_date": "1962-10-01",
+      "vote_average": 7.562,
+      "overview": ""
+    },
+    {
+      "id": 108978,
+      "name": "Reacher",
+      "poster_path": "/xnMVkJFmzAWA6QpfdFfn4qOiTd3.jpg",
+      "backdrop_path": "/pF0qkRsrHkdYadPWY9AMeFZfcwk.jpg",
+      "first_air_date": "2022-02-03",
+      "vote_average": 8.132,
+      "overview": "Quando l'Ufficiale di Polizia Militare in congedo Jack Reacher viene arrestato per un omicidio che non ha commesso, si trova in una cospirazione fatale con poliziotti corrotti, loschi uomini d'affari e politici arrivisti. Con solo il suo ingegno, deve capire cosa sta succedendo a Margrave, Georgia."
+    },
+    {
+      "id": 2316,
+      "name": "The Office (US)",
+      "poster_path": "/7DJKHzAi83BmQrWLrYYOqcoKfhR.jpg",
+      "backdrop_path": "/9vMzIrMIncPmtalcxh1MOrgcE6C.jpg",
+      "first_air_date": "2005-03-24",
+      "vote_average": 8.6,
+      "overview": "Questa commedia di successo racconta le manie di impiegati insoddisfatti e del loro goffo capo Michael Scott all'industria cartiera Dunder Mifflin."
+    },
+    {
+      "id": 549,
+      "name": "Law & Order - I due volti della giustizia",
+      "poster_path": "/hpybpPAmYD1VYasaFlQKcfoVdHT.jpg",
+      "backdrop_path": "/tc7canPSAn2X14hYi6Rl3gZm1o4.jpg",
+      "first_air_date": "1990-09-13",
+      "vote_average": 7.3,
+      "overview": "Law & Order è un media franchise creato da Dick Wolf per la NBC Universal e formato da varie serie televisive poliziesco-giudiziarie e un film per la televisione, trasmessi sul network NBC dal 13 settembre 1990. Il franchise Law & Order nel tempo ha ispirato anche una serie di adattamenti televisivi stranieri, un docu-reality e videogiochi ufficiali, oltre a generare una serie di crossover con altre serie tv statunitensi."
+    }
+  ]
+}

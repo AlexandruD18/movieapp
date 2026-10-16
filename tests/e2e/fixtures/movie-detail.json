@@ -1,0 +1,289 @@
+{
+  "adult": false,
+  "backdrop_path": "/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+  "belongs_to_collection": null,
+  "budget": 160000000,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Azione"
+    },
+    {
+      "id": 878,
+      "name": "Fantascienza"
+    },
+    {
+      "id": 80,
+      "name": "Crime"
+    }
+  ],
+  "homepage": "",
+  "id": 27205,
+  "imdb_id": "tt1375666",
+  "origin_country": [
+    "US",
+    "GB"
+  ],
+  "original_language": "en",
+  "original_title": "Inception",
+  "overview": "Dom Cobb possiede una qualifica speciale: è in grado di inserirsi nei sogni altrui per prelevare i segreti nascosti nel più profondo del subconscio. Viene contattato da Saito, un potentissimo industriale di origine giapponese, il quale gli chiede di tentare l'operazione opposta. Non deve prelevare pensieri celati ma inserire un'idea che si radichi nella mente di una persona. Costui è Robert Fischer Jr. il quale, alla morte dell'anziano e dittatoriale genitore, dovrà convincersi che l'unica cosa che può fare è distruggere l'impero ereditato. Saito avrà allora campo libero. In cambio offrirà a Cobb la possibilità di rientrare negli Stati Uniti dove è ricercato per omicidio. Cobb accetta e si fa affiancare da un team di cui entra a far parte la giovane Ariane, architetto abilissimo nella costruzione di spazi virtuali.",
+  "popularity": 61.3829,
+  "poster_path": "/5QHWgqaBxZI1eM5e3YhyKzY5o3z.jpg",
+  "release_date": "2010-07-15",
+  "revenue": 839030630,
+  "runtime": 148,
+  "softcore": false,
+  "status": "Released",
+  "tagline": "La tua mente è la scena del crimine",
+  "title": "Inception",
+  "video": false,
+  "vote_average": 8.373,
+  "vote_count": 40436,
+  "credits": {
+    "cast": [
+      {
+        "name": "Leonardo DiCaprio",
+        "character": "Dom Cobb",
+        "profile_path": "/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg"
+      },
+      {
+        "name": "Joseph Gordon-Levitt",
+        "character": "Arthur",
+        "profile_path": "/z2FA8js799xqtfiFjBTicFYdfk.jpg"
+      },
+      {
+        "name": "Ken Watanabe",
+        "character": "Saito",
+        "profile_path": "/psAXOYp9SBOXvg6AXzARDedNQ9P.jpg"
+      },
+      {
+        "name": "Tom Hardy",
+        "character": "Eames",
+        "profile_path": "/d81K0RH8UX7tZj49tZaQhZ9ewH.jpg"
+      },
+      {
+        "name": "Elliot Page",
+        "character": "Ariadne",
+        "profile_path": "/nXO8DE4biVXY4UDYP0NdIY1zvXS.jpg"
+      },
+      {
+        "name": "Dileep Rao",
+        "character": "Yusuf",
+        "profile_path": "/jRNn8SZqFXuI5wOOlHwYsWh0hXs.jpg"
+      }
+    ],
+    "crew": [
+      {
+        "name": "Christopher Nolan",
+        "job": "Director"
+      }
+    ]
+  },
+  "videos": {
+    "results": [
+      {
+        "iso_639_1": "en",
+        "iso_3166_1": "US",
+        "name": "The Dream Sequence",
+        "key": "mpj9dL7swwk",
+        "site": "YouTube",
+        "size": 720,
+        "type": "Clip",
+        "official": true,
+        "id": "622d5cc322931a00454e588c",
+        "published_at": "2022-03-09T01:00:20.000Z"
+      },
+      {
+        "iso_639_1": "en",
+        "iso_3166_1": "US",
+        "name": "35mm Theatrical Trailer #3",
+        "key": "cdx31ak4KbQ",
+        "site": "YouTube",
+        "size": 2160,
+        "type": "Trailer",
+        "official": false,
+        "id": "653c6111c8a5ac00e3a09f82",
+        "published_at": "2022-03-07T06:00:19.000Z"
+      },
+      {
+        "iso_639_1": "en",
+        "iso_3166_1": "US",
+        "name": "The Final Scene",
+        "key": "k5DTbekB86s",
+        "site": "YouTube",
+        "size": 720,
+        "type": "Clip",
+        "official": true,
+        "id": "622c37f7a579f90046e2824e",
+        "published_at": "2022-03-06T16:00:31.000Z"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "IT": {
+        "link": "https://www.themoviedb.org/movie/27205-inception/watch?locale=IT",
+        "flatrate": [
+          {
+            "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "display_priority": 1
+          },
+          {
+            "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+            "provider_id": 29,
+            "provider_name": "Sky Go",
+            "display_priority": 6
+          },
+          {
+            "logo_path": "/iGb7XGcCiCZyBgBqIdSEBiOxNc4.png",
+            "provider_id": 109,
+            "provider_name": "Timvision",
+            "display_priority": 8
+          },
+          {
+            "logo_path": "/oFAnvlaEW2KT6J7XM0DXjlWqKu9.png",
+            "provider_id": 39,
+            "provider_name": "Now TV",
+            "display_priority": 9
+          },
+          {
+            "logo_path": "/64fLWeSyZ1KQZhIdvTdy4QHeWty.png",
+            "provider_id": 1825,
+            "provider_name": "HBO Max Amazon Channel",
+            "display_priority": 83
+          },
+          {
+            "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+            "provider_id": 1899,
+            "provider_name": "HBO Max",
+            "display_priority": 84
+          },
+          {
+            "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+            "provider_id": 2100,
+            "provider_name": "Amazon Prime Video with Ads",
+            "display_priority": 85
+          }
+        ],
+        "rent": [
+          {
+            "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+            "provider_id": 2,
+            "provider_name": "Apple TV Store",
+            "display_priority": 5
+          },
+          {
+            "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+            "provider_id": 35,
+            "provider_name": "Rakuten TV",
+            "display_priority": 10
+          },
+          {
+            "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+            "provider_id": 10,
+            "provider_name": "Amazon Video",
+            "display_priority": 33
+          },
+          {
+            "logo_path": "/xfDy4aGaOqbUqKPVQobjoJ9ZsSs.png",
+            "provider_id": 40,
+            "provider_name": "CHILI",
+            "display_priority": 36
+          }
+        ],
+        "buy": [
+          {
+            "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+            "provider_id": 2,
+            "provider_name": "Apple TV Store",
+            "display_priority": 5
+          },
+          {
+            "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+            "provider_id": 35,
+            "provider_name": "Rakuten TV",
+            "display_priority": 10
+          },
+          {
+            "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+            "provider_id": 10,
+            "provider_name": "Amazon Video",
+            "display_priority": 33
+          },
+          {
+            "logo_path": "/xfDy4aGaOqbUqKPVQobjoJ9ZsSs.png",
+            "provider_id": 40,
+            "provider_name": "CHILI",
+            "display_priority": 36
+          }
+        ]
+      }
+    }
+  },
+  "recommendations": {
+    "results": [
+      {
+        "id": 9620,
+        "title": "Paycheck",
+        "media_type": "movie",
+        "poster_path": "/25zVvcy9Q6ptqDPzwe7TPtUXMzJ.jpg",
+        "backdrop_path": "/rdlXnumaarKFHQ4rB8YBWINEeuE.jpg",
+        "release_date": "2003-12-25",
+        "vote_average": 6.232,
+        "overview": "Michael Jennings è un ingegnere specializzato nell'introdursi in prodotti informatici appena brevettati per rubarne i segreti. È talmente bravo che, per contratto, le ditte che lo assoldano gli cancellano i ricordi di tutto il periodo in cui ha lavorato al progetto. Due mesi di vuoto di memoria sono tutto sommato un piccolo prezzo da pagare per vivere agiatamente. Ma un giorno la posta si fa più alta: lavorare per il vecchio amico Rethrick ad un progetto segretissimo, per tre anni, in cambio di una quantità di denaro irrifiutabile. Buio. Ritroviamo Jennings, privo di ogni ricordo dei passati tre anni, con un conto in banca azzerato, una bella fidanzata di cui non ricorda che uno sguardo, l'FBI che lo bracca e gli uomini di Rethrick che vogliono ucciderlo."
+      },
+      {
+        "id": 353491,
+        "title": "La Torre Nera",
+        "media_type": "movie",
+        "poster_path": "/2NQ48l5plPWDJ0Zs18VcVqGrwke.jpg",
+        "backdrop_path": "/pVVobDO8cezhVPvwD6EBUN0g3mt.jpg",
+        "release_date": "2017-08-03",
+        "vote_average": 5.814,
+        "overview": "Il Pistolero Roland Deschain è condannato ad un'eterna battaglia contro Walter O'Dim, conosciuto come l'Uomo in Nero, per impedire il crollo della Torre Nera, che tiene uniti tutti i mondi esistenti. La posta in gioco è il destino dell'universo: il bene e il male si scontreranno in una battaglia decisiva e solo Roland potrà difendere la Torre dall'Uomo in Nero."
+      },
+      {
+        "id": 13455,
+        "title": "Push",
+        "media_type": "movie",
+        "poster_path": "/4v85mDgQwpIXHN1uBoXyPf4xcJV.jpg",
+        "backdrop_path": "/uQ5xARQz6BiKlppKCBnKmkfW76m.jpg",
+        "release_date": "2009-02-04",
+        "vote_average": 6.2,
+        "overview": "Nick Gant è un telecinetico di seconda generazione, capace di muovere gli oggetti con la sola forza della mente. Traumatizzato dalla morte del padre, avvenuta dieci anni prima ad opera di una spietata agenzia governativa, Nick si è ritirato a vivere in un quartiere popoloso di Hong Kong, spendendo il suo tempo tra scommesse ai dadi e raggiri. Avvicinato da Cassie, un'adolescente chiaroveggente e saputella, viene coinvolto in un gioco pericoloso. Dovrà recuperare una valigia contenente un farmaco in grado di aumentare prestazioni e poteri in soggetti con capacità paranormali. Non sarà sempre facile eludere la sorveglianza e sfuggire ai poteri di spietati segugi, capaci di prevedere il futuro, di controllare le menti e di influenzare le azioni altrui. Ma Nick e Cassie hanno un piano, un disegno ed un segreto."
+      },
+      {
+        "id": 4965,
+        "title": "Impostor",
+        "media_type": "movie",
+        "poster_path": "/8ib5e5e2wB7GWKM0Ync5XZVu9Xd.jpg",
+        "backdrop_path": "/dv4tLF2gISz3w1e9YK3rK1jxpLj.jpg",
+        "release_date": "2001-12-03",
+        "vote_average": 6.127,
+        "overview": "Le colonie terrestri che nel 2075 si sono installate nello spazio sono costantemente attaccate dagli alieni. Un agente del governo sta lavorando per mettere a punto un'arma che possa sconfiggerli."
+      },
+      {
+        "id": 315837,
+        "title": "Ghost in the Shell",
+        "media_type": "movie",
+        "poster_path": "/rmfSNIoNVPJGzFWavmQP0gnv8pH.jpg",
+        "backdrop_path": "/dDVqfmCzSy3TKSmiS2pJ9QB5E3P.jpg",
+        "release_date": "2017-03-29",
+        "vote_average": 6.1,
+        "overview": "Major, un singolare ibrido umano-cyborg delle operazioni speciali, è a capo della task force d’elite Section 9. Dedicato a contrastare i più pericolosi criminali ed estremisti, Section 9 affronta un nemico il cui unico obiettivo è eliminare gli sviluppi di cyber tecnologia della Hanka Robotic."
+      },
+      {
+        "id": 10003,
+        "title": "Il santo",
+        "media_type": "movie",
+        "poster_path": "/g99hUEntdMLyJznQk6Vav440GsR.jpg",
+        "backdrop_path": "/ceLkDb2KgZukpeEfAQjXY8bAbe7.jpg",
+        "release_date": "1997-04-03",
+        "vote_average": 6.109,
+        "overview": "Simon Templar, un abilissimo ladro internazionale, ruba per commissione di un faccendiere russo la formula della fusione fredda. Ma rimane anche affascinato dalla scienziata autrice della formula, decide così di rinunciare al colpo per restare con lei."
+      }
+    ]
+  }
+}
