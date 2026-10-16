@@ -1,6 +1,6 @@
 # movieApp 🎬
 
-[![CI](https://github.com/AlexandruD18/movieapp-dimofte/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexandruD18/movieapp-dimofte/actions/workflows/ci.yml)
+[![CI](https://github.com/AlexandruD18/movieapp/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexandruD18/movieapp/actions/workflows/ci.yml)
 
 Web app in stile Netflix per esplorare film e serie TV con dati in tempo reale da [TMDB](https://www.themoviedb.org/).
 È scritta in **HTML, CSS e JavaScript vanilla** (ES modules), senza framework né build step, ed è coperta da test unitari, end-to-end e di accessibilità.
