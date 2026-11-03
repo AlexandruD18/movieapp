@@ -34,8 +34,11 @@ test('il popup occupa tutto lo schermo', async ({ page }) => {
     const dialog = page.getByRole('dialog');
     await expect(dialog.getByRole('heading', { level: 2 })).toBeVisible();
 
-    const box = await dialog.boundingBox();
+    // Il popup si apre con un'animazione: la misura vale quando è finita.
     const viewport = page.viewportSize();
-    expect(Math.round(box.width)).toBe(viewport.width);
-    expect(Math.round(box.height)).toBe(viewport.height);
+    await expect(async () => {
+        const box = await dialog.boundingBox();
+        expect(Math.round(box.width)).toBe(viewport.width);
+        expect(Math.round(box.height)).toBe(viewport.height);
+    }).toPass({ timeout: 5000 });
 });
