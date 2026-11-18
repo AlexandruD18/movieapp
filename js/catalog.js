@@ -214,6 +214,10 @@ export const initCatalog = (type) => {
 
             if (reset && data.results.length === 0) {
                 els.grid.replaceChildren(createStatus('Nessun titolo per questa combinazione. Prova un altro genere.'));
+            } else if (reset && items.length === 0) {
+                // l'unico risultato è già in evidenza: la griglia resta vuota, senza messaggi
+                els.grid.removeAttribute('aria-busy');
+                els.grid.replaceChildren();
             } else {
                 renderCards(els.grid, items, type, { append: !reset });
             }
@@ -285,12 +289,15 @@ export const initCatalog = (type) => {
     };
 
     const loadGenres = async () => {
+        let loaded = true;
         try {
             genres = await getGenres(type);
         } catch {
             genres = []; // senza generi il catalogo funziona lo stesso
+            loaded = false;
         }
-        if (state.genre && !genreName()) {
+        // solo con l'elenco in mano si può dire che il genere dell'URL non esiste
+        if (loaded && state.genre && !genreName()) {
             // genere sconosciuto nell'URL: torno a "tutti"
             select({ genre: null });
         }

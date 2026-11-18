@@ -51,7 +51,8 @@ test.describe('popup dettagli', () => {
 
     test('da tastiera: Invio apre, Esc chiude e il focus torna sulla card', async ({ page }) => {
         await page.goto('/index.html');
-        const card = page.locator('#top-rated-grid .card').first();
+        // [data-id] esclude gli skeleton, che vengono sostituiti all'arrivo dei dati
+        const card = page.locator('#top-rated-grid .card[data-id]').first();
         await card.focus();
         await page.keyboard.press('Enter');
         await expect(dialogOf(page).getByRole('heading', { level: 2 })).toBeVisible();
