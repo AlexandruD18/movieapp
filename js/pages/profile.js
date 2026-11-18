@@ -1,4 +1,4 @@
-import { getFavorites, onFavoritesChange } from '../favorites.js';
+import { getFavorites, getListStats, onFavoritesChange } from '../favorites.js';
 import { initLayout } from '../layout.js';
 import { createStatus, renderCards } from '../utils.js';
 
@@ -12,17 +12,12 @@ let activeFilter = 'all';
 
 /* statistiche calcolate dalla lista reale */
 const renderStats = (favorites) => {
-    const movies = favorites.filter(FILTERS.movie).length;
-    const rated = favorites.filter((item) => item.vote_average);
-    const average = rated.length
-        ? (rated.reduce((sum, item) => sum + item.vote_average, 0) / rated.length).toFixed(1)
-        : '–';
-    const minutes = favorites.reduce((sum, item) => sum + (item.runtime || 0), 0);
+    const stats = getListStats(favorites);
 
-    document.getElementById('stat-movies').textContent = movies;
-    document.getElementById('stat-series').textContent = favorites.length - movies;
-    document.getElementById('stat-average').textContent = average;
-    document.getElementById('stat-hours').textContent = Math.round(minutes / 60);
+    document.getElementById('stat-movies').textContent = stats.movies;
+    document.getElementById('stat-series').textContent = stats.series;
+    document.getElementById('stat-average').textContent = stats.average === null ? '–' : stats.average.toFixed(1);
+    document.getElementById('stat-hours').textContent = Math.round(stats.movieMinutes / 60);
 };
 
 const renderList = () => {

@@ -40,6 +40,18 @@ const getTotalRuntime = (type, detail) => {
 
 export const getFavorites = () => [...favorites];
 
+/* statistiche della lista: la durata conta solo i film, perché TMDB spesso non ha quella degli episodi */
+export const getListStats = (list = favorites) => {
+    const movies = list.filter((item) => item.media_type === 'movie');
+    const rated = list.filter((item) => item.vote_average);
+    return {
+        movies: movies.length,
+        series: list.length - movies.length,
+        average: rated.length ? rated.reduce((sum, item) => sum + item.vote_average, 0) / rated.length : null,
+        movieMinutes: movies.reduce((sum, item) => sum + (item.runtime || 0), 0),
+    };
+};
+
 export const isFavorite = (type, id) => favorites.some((item) => item.media_type === type && item.id === id);
 
 export const onFavoritesChange = (callback) => window.addEventListener(CHANGE_EVENT, callback);

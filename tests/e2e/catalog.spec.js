@@ -109,6 +109,27 @@ test('una combinazione senza titoli lo spiega', async ({ page }) => {
     await expect(page.locator('#spotlight')).toBeHidden();
 });
 
+test('con un solo risultato mostra il titolo in evidenza senza messaggi di lista vuota', async ({ page }) => {
+    const featured = featuredOf('movie-popular');
+    await page.route('https://api.themoviedb.org/3/movie/popular?*', (route) => route.fulfill({
+        json: { page: 1, total_pages: 1, total_results: 1, results: [featured] },
+    }));
+    await page.goto('/movies.html');
+
+    await expect(page.locator('#spotlight-title')).toHaveText(featured.title);
+    await expect(page.locator('#catalog-count')).toHaveText('1 titolo');
+    await expect(page.locator('#catalog-grid')).toBeEmpty();
+});
+
+test('se i generi non arrivano, il genere nell’URL resta valido', async ({ page }) => {
+    const animation = genreId('movie', 'Animazione');
+    await page.route('https://api.themoviedb.org/3/genre/movie/list?*', (route) => route.fulfill({ status: 500, json: {} }));
+    await page.goto(`/movies.html?genre=${animation}`);
+
+    await expect(grid(page).first()).toBeVisible();
+    await expect(page).toHaveURL(new RegExp(`\\?genre=${animation}$`));
+});
+
 test('se l’API fallisce mostra il motivo e "Riprova" funziona', async ({ page }) => {
     const restore = await failApi(page, 401);
     await page.goto('/movies.html');

@@ -62,6 +62,17 @@ describe('la mia lista', () => {
         expect(reloaded.getFavorites()).toEqual([]);
     });
 
+    it('le statistiche contano la durata dei soli film', () => {
+        favorites.toggleFavorite('movie', movie);
+        favorites.toggleFavorite('tv', series);
+
+        expect(favorites.getListStats()).toEqual({ movies: 1, series: 1, average: 8.7, movieMinutes: 148 });
+    });
+
+    it('senza voti la media è assente', () => {
+        expect(favorites.getListStats().average).toBeNull();
+    });
+
     it('avvisa la pagina a ogni modifica', () => {
         const listener = vi.fn();
         favorites.onFavoritesChange(listener);
